@@ -44,7 +44,7 @@ float bevelMax(float a,float b)
 vec2 pmod(vec2 p,float n)
 {
     float a=mod(atan(p.y,p.x),TAU/n)-.5*TAU/n;
-    return length(p)*vec2(sin(p.x),cos(p.y));
+    return length(p)*vec2(sin(a),cos(a));
 }
 
 vec3 rep(vec3 p,float n)
