@@ -23,6 +23,15 @@ vec3 makeN(vec3 p)
                           map(p+eps.yyx)-map(p-eps.yyx)));
 }
 
+// 2DのSDFに厚みを持たせる
+// pz:pos.z
+// d:sdf2d
+// t:thickness
+float extrude(float pz, float d, float t)
+{
+    return max(abs(pz) - t, d);
+}
+
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     vec2 uv=(2.*fragCoord.xy-iResolution.xy)/iResolution.y;
